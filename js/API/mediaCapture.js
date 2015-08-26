@@ -8,11 +8,10 @@ var mc = {
             //$('#fotoTomada').attr("rel", path);
 
             numActividad = $("#numActividad").text();
-
+            fn.cambiarPagina("#fotoProceso", numActividad);
             // desplegar la foto tomada
             $('#fotoTomada').css('background-image', 'url("'+path+'")');
             $('#fotoTomada').attr("rel", path);
-            fn.cambiarPagina("#fotoProceso", numActividad);
             
         }
     },
@@ -20,6 +19,6 @@ var mc = {
         navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
     },
     start: function(){
-        navigator.device.capture.captureImage(mc.captureSuccess, mc.captureError, {limit:2});
+        navigator.device.capture.captureImage(mc.captureSuccess, mc.captureError, {limit:1});
     }
 };
