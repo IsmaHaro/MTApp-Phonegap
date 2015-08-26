@@ -11,6 +11,7 @@ var mc = {
 
             // desplegar la foto tomada
             $('#fotoTomada').css('background-image', 'url("'+path+'")');
+            $('#fotoTomada').attr("rel", path);
             fn.cambiarPagina("#fotoProceso", numActividad);
             
         }
