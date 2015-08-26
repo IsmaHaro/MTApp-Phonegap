@@ -1,7 +1,7 @@
 var fn = {
 
     actividades: null,
-    numActividades: null,
+    numActividades: 3,
 
 	init: function(){
 
@@ -39,9 +39,9 @@ var fn = {
 
             // cargar los datos del proceso
             // de acuerdo al usuario
-            numProceso = fn.cargarDatos();
+            numActividad = fn.cargarDatos();
 
-            fn.cambiarPagina("#proceso",""+numProceso+"");
+            fn.cambiarPagina("#proceso",""+numActividad+"");
             $("#password").val("");
         
         }else{
@@ -60,15 +60,15 @@ var fn = {
         fn.cambiarPagina("#nosotros");
     },
 
-    cambiarPagina: function(pagina , numProceso){
+    cambiarPagina: function(pagina , numActividad){
         $("html").find("div.page").removeClass("active")
                                   .addClass("inactive");
         $("div"+pagina).addClass("transition active");
 
-        // Si tiene argumento numProceso es porque
+        // Si tiene argumento numActividad es porque
         // vamos a agregar el numero de proceso al h2
-        if(numProceso){
-            $("div"+pagina).find("#numProceso").html(numProceso);
+        if(numActividad){
+            $("div"+pagina).find("#numActividad").html(numActividad);
         }
     },
 
@@ -80,7 +80,7 @@ var fn = {
 
         //var mydata = JSON.parse(data);
         var i;
-        for(i=0;i<2;i++){
+        for(i=0;i<5;i++){
             if(!data[i].resuelto){
                 break;
             }
@@ -88,33 +88,35 @@ var fn = {
 
         date        = new Date();
         fecha       = date.getDate()+" - "+monthNames[date.getMonth()]+" - "+date.getFullYear();
-        numProceso  = data[i].numero;
+        numActividad  = data[i].numero;
         descripcion = data[i].descripcion;
 
         $("#datosProceso .fecha").text(fecha);
         $("#datosProceso .descripcion").text(descripcion);
 
         // retornar el numero de proceso
-        return numProceso;
+        return numActividad;
     },
 
     verificarProceso: function(){
         // Enviar a la BD la foto y la informacion del proceso
-        numProceso = $("#numProceso").text();
+        numActividad = $("#numActividad").text();
 
-        data[numProceso-1].resuelto = true;
+        data[numActividad-1].resuelto = true;
 
         // Despues cargar datos del siguiente proceso (si existe)
         // en la pagina proceso y volver a ella.
 
-        numProceso = fn.cargarDatos();
+        numActividad = fn.cargarDatos();
 
-        if(numProceso != 3){
-            fn.cargadorAjax("#proceso", numProceso);
+        if(numActividad != fn.numActividades){
+            fn.cargadorAjax("#proceso", numActividad);
 
         }else{
-            fn.cargadorAjax("#principal");
-            alert("Ha terminado todas sus actividades");
+            fn.cargadorAjax("#fin");
+            setTimeout(function(){
+                location.reload();
+            },4500);
         }
 
 
@@ -147,11 +149,11 @@ var fn = {
 
     pruebaFoto: function(event){
 
-        numProceso = $("#numProceso").text();
+        numActividad = $("#numActividad").text();
 
         // desplegar la foto tomada
         $('#fotoTomada').css('background-image', 'url("img/fotoProceso.jpg")');
-        fn.cambiarPagina("#fotoProceso", numProceso);
+        fn.cambiarPagina("#fotoProceso", numActividad);
 
     }
 }
