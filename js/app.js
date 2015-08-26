@@ -5,8 +5,8 @@ var fn = {
 
 	init: function(){
 
-        $("html").find("div.page").addClass("inactive");
-        $("html").find("div.page#principal").removeClass("inactive").addClass("active");
+        $("div.page").addClass("inactive");
+        $("div.page#principal").removeClass("inactive").addClass("active");
 
 		$("#ingresar").click(fn.login);
 
