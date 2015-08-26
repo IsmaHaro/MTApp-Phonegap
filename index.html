@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>IntevaApp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    </head>
+    <body>
+		<section id="waitPage"><div class="img"></div></section>
+        <div class="page" id="principal">
+            <header>
+                <h2>Login</h2>
+            </header>
+
+            <div id="login">
+                <img src="img/inteva.jpg">
+                <input type="password" id="password" placeholder="Clave">  
+                <span class="usuarioIncorrecto">Clave incorrecta</span>
+                <button id="ingresar" class="btn">Ingresar</button>
+                <a id="verNosotros" >Más información</a>
+            </div>
+        </div>
+
+       <!--  <div class="page" id="procesos">
+            <header>
+                <h2>Procesos</h2>
+                <div id="datosUsuario">
+                    <p class="nombre">
+                        <span class="blues">Nombre:</span> 
+                    </p class="fecha">
+                    <time>
+                        <span class="blues">Fecha:</span>
+                        17 - Julio - 2015
+                    </time>
+                    <p class="Turno">
+                        <span class="blues">Turno:</span> 
+                        Matutino
+                    </p>
+                </div>
+            </header>
+
+            <ul id="listaProcesos">
+                <li class="procesoHecho">1</li>
+                <li class="procesoActivo">2</li>
+                <li class="procesoBloqueado">3</li>
+                <li class="procesoBloqueado">4</li>
+                <li class="procesoBloqueado">5</li>
+                <li class="procesoBloqueado">6</li>
+                <li class="procesoBloqueado">7</li>
+                <li class="procesoBloqueado">8</li>
+            </ul>
+        </div> -->
+
+        <div class="page" id="proceso">
+            <header>
+                <i class="fa fa-sign-out signout"></i>
+                <h2>Actividad <span id="numProceso"></span></h2>
+            </header>
+    
+            <div class="tabla">
+                <table id="datosProceso" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td class="icono">
+                            <i class="fa fa-user"></i>
+                        </td>
+                        <td class="nombreTrabajador">Demo</td>
+                    </tr>
+                    <tr>
+                        <td class="icono">
+                            <i class="fa fa-industry"></i>
+                            <!-- <i class="fa fa-wrench"></i> -->
+                        </td>
+                        <td class="estacionTrabajo">Ensamble de Mecanismos</td>
+                    </tr>
+                    <tr>
+                        <td class="icono">
+                            <i class="fa fa-calendar"></i>
+                        </td>
+                        <td class="fecha">17 - Julio - 2015</td>
+                    </tr>
+                    <tr>
+                        <td class="icono">
+                            <i class="fa fa-gears"></i>
+                        </td>
+                        <td class="numMaquinaria">Quemacocos A7</td>
+                    </tr>
+                    <tr>
+                        <td class="icono">
+                            <i class="fa fa-clock-o"></i>
+                        </td>
+                        <td class="turno">Matutino</td>
+                    </tr>
+                    <tr>
+                        <td class="icono">
+                            <i class="fa fa-list-ol"></i>
+                        </td>
+                        <td class="operacion">20</td>
+                    </tr>
+                    <tr>
+                        <td class="division" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="descripcion" colspan="2">
+                            Verificar que no existan fugas de aire en mangueras, valvulas o pistones.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <button id="tomarFoto" class="btn bottom">Hecho</button>
+        </div>
+
+        <div class="page" id="fotoProceso">
+             <header>
+                <h2>Proceso <span id="numProceso"></span></h2>
+            </header>
+            <div id="fotoTomada">
+            </div>
+
+            <div class="loader escondido">
+                
+            </div>
+
+            <button id="verificarProceso" class="btn bottom left c6 correct">
+                <i class="fa fa-check"></i>
+                Verificar
+            </button>
+            <button id="cancelarProceso" class="btn bottom right c6 incorrect">
+                <i class="fa fa-times"></i>
+                Cancelar
+            </button>
+        </div>
+
+        <div class="page" id="nosotros">
+            <header>
+                <i class="fa fa-arrow-left signout"></i>
+                <h2>Nosotros</h2>
+            </header>
+            <p>
+                
+            </p>
+        </div>
+        
+        <script src="phonegap.js"></script>
+        <script src="js/zepto.min.js"></script>
+        <script src="js/API/mediaCapture.js"></script>
+        <script src="js/data.json"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+www.igisoft.com/apps/inteva/
+
+Objeto JSON 
+
+workstation
+date
+procedure
+operation
+machine
+activity
