@@ -4,15 +4,14 @@ var mc = {
         for (i = 0, len = mediaFiles.length; i < len; i += 1) {
             path = mediaFiles[i].fullPath;
             // do something interesting with the file
-            $('#fotoTomada').html('<img src="' + path + '" width="100%">');
-            $('#fotoTomada').attr("rel", path);
+            //$('#fotoTomada').html('<img src="' + path + '" width="100%">');
+            //$('#fotoTomada').attr("rel", path);
 
+            numActividad = $("#numActividad").text();
 
-            // Obtener el numero de proceso 
-            numProceso = $("#numProceso").text();
             // desplegar la foto tomada
-            $('#fotoTomada').css('background-image', 'url("img/'+path+'.jpg")');
-            fn.cambiarPagina("#fotoProceso", numProceso);
+            $('#fotoTomada').css('background-image', 'url("'+path+'")');
+            fn.cambiarPagina("#fotoProceso", numActividad);
             
         }
     },
