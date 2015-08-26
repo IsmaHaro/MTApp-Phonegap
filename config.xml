@@ -22,7 +22,7 @@
             Ismael Haro
         </author>
         
-        <icon src="img/icon.png" />
+        <icon src="img/inteva.jpg" />
         
         <gap:plugin name="org.apache.cordova.media-capture" />
     </widget>
