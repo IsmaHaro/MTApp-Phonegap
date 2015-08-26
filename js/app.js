@@ -115,6 +115,7 @@ var fn = {
         }else{
             fn.cargadorAjax("#fin");
             setTimeout(function(){
+                fn.cambiarPagina("#principal");
                 location.reload();
             },4500);
         }
