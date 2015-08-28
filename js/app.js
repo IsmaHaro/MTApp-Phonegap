@@ -2,7 +2,7 @@ var fn = {
 
     actividades: null,
     numActividades: 3,
-
+    numActividad: null,
 	init: function(){
 
         $("div.page").addClass("inactive");
@@ -16,8 +16,8 @@ var fn = {
         
         // Este es la accion para cuando se compile
         $("#tomarFoto").click(function(){
-            numActividad = $("#numActividad").text();
-            fn.cambiarPagina("#fotoProceso", numActividad);
+            $(".numActividad").text(fn.numActividad);
+            fn.cambiarPagina("#fotoProceso");
             mc.start();
         });
 
@@ -39,13 +39,12 @@ var fn = {
 
         // Verificar datos existentes en la BD
         if(password == "demo"){
-        	console.log("Haciendo login...");
-
             // cargar los datos del proceso
             // de acuerdo al usuario
-            numActividad = fn.cargarDatos();
+            fn.cargarDatos();
 
-            fn.cambiarPagina("#proceso",""+numActividad+"");
+            $(".numActividad").html(fn.numActividad);
+            fn.cambiarPagina("#proceso");
             $("#password").val("");
         
         }else{
@@ -65,14 +64,14 @@ var fn = {
     },
 
     cambiarPagina: function(pagina , numActividad){
-        $("html").find("div.page").removeClass("active")
-                                  .addClass("inactive");
+        $("div.page").removeClass("active")
+                     .addClass("inactive");
         $("div"+pagina).addClass("transition active");
 
         // Si tiene argumento numActividad es porque
-        // vamos a agregar el numero de proceso al h2
+        // vamos a agregar el numero de actividad al h2
         if(numActividad){
-            $("div"+pagina).find("#numActividad").html(numActividad);
+            $(".numActividad").html(numActividad);
         }
     },
 
@@ -92,29 +91,27 @@ var fn = {
 
         date        = new Date();
         fecha       = date.getDate()+" - "+monthNames[date.getMonth()]+" - "+date.getFullYear();
-        numActividad  = data[i].numero;
+        fn.numActividad  = data[i].numero;
         descripcion = data[i].descripcion;
 
         $("#datosProceso .fecha").text(fecha);
         $("#datosProceso .descripcion").text(descripcion);
 
         // retornar el numero de proceso
-        return numActividad;
+        return fn.numActividad;
     },
 
     verificarProceso: function(){
         // Enviar a la BD la foto y la informacion del proceso
-        numActividad = $("#numActividad").text();
-
-        data[numActividad-1].resuelto = true;
+        data[fn.numActividad-1].resuelto = true;
 
         // Despues cargar datos del siguiente proceso (si existe)
         // en la pagina proceso y volver a ella.
 
-        numActividad = fn.cargarDatos();
+        fn.cargarDatos();
 
-        if(numActividad != fn.numActividades){
-            fn.cargadorAjax("#proceso", numActividad);
+        if(fn.numActividad != fn.numActividades){
+            fn.cargadorAjax("#proceso",fn.numActividad);
 
         }else{
             fn.cargadorAjax("#fin");
@@ -154,11 +151,10 @@ var fn = {
 
     pruebaFoto: function(event){
 
-        numActividad = $("#numActividad").text();
-
         // desplegar la foto tomada
         $('#fotoTomada').css('background-image', 'url("img/fotoProceso.jpg")');
-        fn.cambiarPagina("#fotoProceso", numActividad);
+        $(".numActividad").html(fn.numActividad);
+        fn.cambiarPagina("#fotoProceso");
 
     }
 }
