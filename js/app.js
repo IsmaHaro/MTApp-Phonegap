@@ -15,7 +15,11 @@ var fn = {
         $("#verNosotros").click(fn.nosotros);
         
         // Este es la accion para cuando se compile
-        $("#tomarFoto").click(mc.start);
+        $("#tomarFoto").click(function(){
+            numActividad = $("#numActividad").text();
+            fn.cambiarPagina("#fotoProceso", numActividad);
+            mc.start;
+        });
 
         //Se sustituye la accion de arriba solo para hacer pruebas
         //$("#tomarFoto").click(fn.pruebaFoto);
