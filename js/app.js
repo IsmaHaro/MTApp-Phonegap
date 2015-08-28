@@ -60,7 +60,7 @@ var fn = {
     },
 
     cambiarPagina: function(pagina , numActividad){
-        $("div.page").removeClass("active")
+        $("div.page").removeClass("active transition")
                      .addClass("inactive");
         $("div"+pagina).addClass("transition active");
 
