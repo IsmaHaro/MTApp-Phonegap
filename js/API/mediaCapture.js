@@ -5,6 +5,7 @@ var mc = {
             path = mediaFiles[i].fullPath;
 
             // desplegar la foto tomada
+            fn.cambiarPagina("#fotoProceso");
             $('#fotoTomada').css('background-image', 'url("'+path+'")');
             $('#fotoTomada').attr("rel", path);
             
@@ -14,7 +15,6 @@ var mc = {
         navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
     },
     start: function(){
-        fn.cambiarPagina("#fotoProceso");
         navigator.device.capture.captureImage(mc.captureSuccess, mc.captureError, {limit:1});
     }
 };
