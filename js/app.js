@@ -8,25 +8,25 @@ var fn = {
         $("div.page").addClass("inactive");
         $("div.page#principal").removeClass("inactive").addClass("active");
 
-		$("#ingresar").click(fn.login);
+		$("#ingresar").tap(fn.login);
 
-        $(".signout").click(fn.logout);
+        $(".signout").tap(fn.logout);
 
-        $("#verNosotros").click(fn.nosotros);
+        $("#verNosotros").tap(fn.nosotros);
         
         // Este es la accion para cuando se compile
-        $("#tomarFoto").click(function(){
+        $("#tomarFoto").tap(function(){
             $(".numActividad").text(fn.numActividad);
             fn.cambiarPagina("#fotoProceso");
             mc.start();
         });
 
         //Se sustituye la accion de arriba solo para hacer pruebas
-        //$("#tomarFoto").click(fn.pruebaFoto);
+        //$("#tomarFoto").tap(fn.pruebaFoto);
 
-        $("#verificarProceso").click(fn.verificarProceso);
+        $("#verificarProceso").tap(fn.verificarProceso);
 
-        $("#cancelarProceso").click(fn.cancelarProceso);
+        $("#cancelarProceso").tap(fn.cancelarProceso);
 
 	},
 
