@@ -14,6 +14,7 @@ var mc = {
         navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
     },
     start: function(){
+        fn.cambiarPagina("#fotoProceso");
         navigator.device.capture.captureImage(mc.captureSuccess, mc.captureError, {limit:1});
     }
 };
