@@ -18,7 +18,7 @@ var fn = {
         $("#tomarFoto").click(function(){
             numActividad = $("#numActividad").text();
             fn.cambiarPagina("#fotoProceso", numActividad);
-            mc.start;
+            mc.start();
         });
 
         //Se sustituye la accion de arriba solo para hacer pruebas
