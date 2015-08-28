@@ -185,7 +185,11 @@ header > h2{
 #login{
 	position: relative;
 	top: 50%;
-	transform: translate(0,-50%);
+	-webkit-transform: translate3d(0,-50%,0);
+	-moz-transform: translate3d(0,-50%,0);
+	-ms-transform: translate3d(0,-50%,0);
+	-o-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
 }
 
 #login img{
