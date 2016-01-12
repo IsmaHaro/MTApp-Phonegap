@@ -2,7 +2,7 @@
     <widget xmlns = "http://www.w3.org/ns/widgets"
 
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "mx.cenet.intevaApp"
+        id          = "mx.com.mistertennis.app"
         version     = "1.0.0"
         versionCode = "1" >
 
@@ -10,16 +10,15 @@
 
         <preference name="phonegap-version" value="3.7.0" />
 
-        <name>IntevaApp</name>
+        <name>Mister Tennis App</name>
 
         <description>
-            Aplicacion para trabajadores de Inteva
+            Aplicación de Mister Tennis
         </description>
 
-        <author href="http://igitsoft.com" email="info@igitsoft.com">
-            Jonathan Cordova
-            Carlos Celma
-            Ismael Haro
+        <author href="#" email="ismaharo18@gmail.com">
+            Ismael Haro Camacho
+            Victor Hugo Benitez Bosques
         </author>
         
         <icon src="img/inteva3.png" />

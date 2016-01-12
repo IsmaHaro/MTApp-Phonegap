@@ -2,25 +2,35 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>IntevaApp</title>
+        <title>MisterTennisApp</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/estilos.min.css">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
     </head>
     <body>
         <div class="page" id="principal">
             <header>
-                <h2>Login</h2>
+                <i class="fa fa-bars menu-bars"></i>
+                <h2>Mister Tennis</h2>
             </header>
 
             <div id="login">
-                <img src="img/inteva.jpg">
-                <input type="password" id="password" placeholder="Clave">  
-                <span class="usuarioIncorrecto">Clave incorrecta</span>
-                <button id="ingresar" class="btn">Ingresar</button>
+                <img src="img/logo1.png">
+                <button id="ingresar" class="btn">Comenzar</button>
                 <a id="verNosotros" >Más información</a>
             </div>
         </div>
+
+        <nav class="menu">
+            <ul>
+                <li>Opcion 1</li>
+                <li>Opcion 2</li>
+                <li>Opcion 3</li>
+                <li>Opcion 4</li>
+                <li>Opcion 5</li>
+                <li>Opcion 6</li>
+            </ul>
+        </nav>
 
         <div class="page inactive" id="proceso">
             <header>
@@ -131,6 +141,6 @@
         <script src="js/zepto.min.js"></script>
         <script src="js/API/mediaCapture.min.js"></script>
         <script src="js/data.json"></script>
-        <script src="js/app.min.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>

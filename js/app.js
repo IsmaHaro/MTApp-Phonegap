@@ -15,10 +15,10 @@ var fn = {
         $("#verNosotros").tap(fn.nosotros);
         
         // Este es la accion para cuando se compile
-        $("#tomarFoto").tap(mc.start);
+        //$("#tomarFoto").tap(mc.start);
 
         //Se sustituye la accion de arriba solo para hacer pruebas
-        //$("#tomarFoto").tap(fn.pruebaFoto);
+        $("#tomarFoto").tap(fn.pruebaFoto);
 
         $("#verificarProceso").tap(fn.verificarProceso);
 
@@ -155,6 +155,6 @@ var fn = {
     }
 }
 
-$(fn.deviceready);
+//$(fn.deviceready);
 
-//fn.init();
+fn.init();
