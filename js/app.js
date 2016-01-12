@@ -14,7 +14,6 @@ var fn = {
 
         $('html').click(function(e) {
             if(!$(e.target).hasClass('menu-bars')){
-console.log(e.target);
                 $(".menu").addClass('hidden').removeClass('visible');
             }
             
@@ -22,13 +21,6 @@ console.log(e.target);
 
         $('.menu').click(function(event){
             event.stopPropagation();
-        });
-
-        $(".menu").on('clickoutside touchendoutside', function () {
-console.log("OUTSIDE");
-            if (!($this.hasClass('hidden'))) { 
-                $this.addClass('hidden'); 
-            }
         });
 
         $(".signout").click(fn.logout);
