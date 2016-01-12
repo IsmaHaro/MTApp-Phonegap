@@ -8,23 +8,54 @@ var fn = {
         $("div.page").addClass("inactive");
         $("div.page#principal").removeClass("inactive").addClass("active");
 
-		$("#ingresar").tap(fn.login);
+		$("#ingresar").click(fn.login);
 
-        $(".signout").tap(fn.logout);
+        $(".menu-bars").click(fn.menu);
 
-        $("#verNosotros").tap(fn.nosotros);
+        $('html').click(function(e) {
+            if(!$(e.target).hasClass('menu-bars')){
+console.log(e.target);
+                $(".menu").addClass('hidden').removeClass('visible');
+            }
+            
+        });
+
+        $('.menu').click(function(event){
+            event.stopPropagation();
+        });
+
+        $(".menu").on('clickoutside touchendoutside', function () {
+console.log("OUTSIDE");
+            if (!($this.hasClass('hidden'))) { 
+                $this.addClass('hidden'); 
+            }
+        });
+
+        $(".signout").click(fn.logout);
+
+        $("#verNosotros").click(fn.nosotros);
         
         // Este es la accion para cuando se compile
-        //$("#tomarFoto").tap(mc.start);
+        //$("#tomarFoto").click(mc.start);
 
         //Se sustituye la accion de arriba solo para hacer pruebas
-        $("#tomarFoto").tap(fn.pruebaFoto);
+        $("#tomarFoto").click(fn.pruebaFoto);
 
-        $("#verificarProceso").tap(fn.verificarProceso);
+        $("#verificarProceso").click(fn.verificarProceso);
 
-        $("#cancelarProceso").tap(fn.cancelarProceso);
+        $("#cancelarProceso").click(fn.cancelarProceso);
 
 	},
+
+    menu: function(){
+        $menu = $(".menu");
+        if($menu.hasClass('hidden')){
+            $menu.removeClass('hidden').addClass('visible');
+
+        }else{
+            $menu.removeClass('visible').addClass('hidden');
+        }
+    },
 
 	deviceready: function(){
 		document.addEventListener("deviceready", fn.init, false);
