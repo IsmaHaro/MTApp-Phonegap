@@ -21,7 +21,7 @@
             Victor Hugo Benitez Bosques
         </author>
         
-        <icon src="img/inteva3.png" />
+        <icon src="img/icono.png" />
         
         <gap:plugin name="org.apache.cordova.media-capture" />
     </widget>
